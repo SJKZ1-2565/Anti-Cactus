@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "anti-cactus",
+	"version": "${version}",
+	"name": "Anti cactus",
+	"description": "Stop items from vanishing when they touch a cactus. Add new item tag 'minecraft:immune_to_cactus'",
+	"authors": [
+		"SJKZ1"
+	],
+	"contact": {
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/anti-cactus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.sjkz1.AntiCactus"
+		],
+		"client": [
+			"com.sjkz1.AntiCactusClient"
+		],
+		"fabric-datagen": [
+			"com.sjkz1.AntiCactusDataGenerator"
+		]
+	},
+	"mixins": [
+		"anti-cactus.mixins.json",
+		{
+			"config": "anti-cactus.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
